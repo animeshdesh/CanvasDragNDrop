@@ -1,4 +1,5 @@
 import React from "react";
+import AppHeader from "./components/AppHeader";
 import "./App.css";
 
 // You can split your components
@@ -8,9 +9,7 @@ const App = () => {
   return (
     <div className="App">
       {/* Feel free to delete the header */}
-      <header className="App-header">
-        <p></p>
-      </header>
+      <AppHeader />
       <Editor />
     </div>
   );

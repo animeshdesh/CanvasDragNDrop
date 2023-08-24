@@ -1,0 +1,18 @@
+.App_header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.button_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 210px;
+}
+.header_button {
+  color: black;
+}
