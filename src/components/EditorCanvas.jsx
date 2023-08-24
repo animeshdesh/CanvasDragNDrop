@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React from "react";
 
 const EditorCanvas = (props) => {
@@ -5,7 +6,9 @@ const EditorCanvas = (props) => {
 
   return (
     <div className="editor-canvas">
-      <h4> Put the drag and drop interface over here! </h4>
+      <Typography variant="h3" className="editor-canvas-heading">
+        Drag & drop components here.
+      </Typography>
       {components.map((component, index) => {
         return <div key={index}>{component}</div>;
       })}

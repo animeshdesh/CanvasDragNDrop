@@ -1,10 +1,22 @@
 import React from "react";
+import PickerButtons from "./PickerButtons";
+import { Button } from "@mui/material";
+import Textimg from "../Assets/Text.png";
+import Buttonimg from "../Assets/Button.png";
+import Dropdownimg from "../Assets/Dropdown.png";
+import Tableimg from "../Assets/Table.png";
+import PickerSearch from "./PickerSearch";
 
 const EditorPicker = (props) => {
   const { onComponentCreation, onClearCanvas } = props;
 
   const handelCreateButton = () => {
-    const newButton = <button key={Date.now()}>New Button</button>;
+    // const newButton = <button key={Date.now()}>New Button</button>;
+    const newButton = (
+      <Button key={Date.now()} variant="contained">
+        New Button
+      </Button>
+    );
     onComponentCreation(newButton);
   };
   const handelCreateText = () => {
@@ -51,17 +63,32 @@ const EditorPicker = (props) => {
 
   return (
     <div className="editor-picker">
-      <h4>
-        {" "}
-        Clicking these buttons should create new components on the canvas{" "}
-      </h4>
-      <button onClick={handelCreateButton}> Create a button </button>
-      <button onClick={handelCreateText}> Create a text input </button>
-      <button onClick={handleCreateDropdown}> Create a dropdown </button>
-      <button onClick={handleCreateTable}> Create a table </button>
-      <button onClick={onClearCanvas}>
-        <h3>Clear Canvas</h3>
-      </button>
+      <PickerSearch />
+      <PickerButtons
+        onClick={handelCreateButton}
+        Heading={"Button"}
+        subHeading={"Trigger actions like run queries.."}
+        imgURL={Buttonimg}
+      />
+      <PickerButtons
+        onClick={handelCreateText}
+        Heading={"Text Input"}
+        subHeading={"Supports Markdown or HTML"}
+        imgURL={Textimg}
+      />
+      <PickerButtons
+        onClick={handleCreateDropdown}
+        Heading={"Dropdown"}
+        subHeading={"Select from a set of options, with a dropdown."}
+        imgURL={Dropdownimg}
+      />
+      <PickerButtons
+        onClick={handleCreateTable}
+        Heading={"Table"}
+        subHeading={"Display tabular data with pagination."}
+        imgURL={Tableimg}
+      />
+      <Button onClick={onClearCanvas}>Clear Canvas</Button>
     </div>
   );
 };
