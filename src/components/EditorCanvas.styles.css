@@ -1,0 +1,19 @@
+.editor-canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 10px;
+  max-width: 800px;
+}
+
+.component {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+}

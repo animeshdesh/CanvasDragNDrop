@@ -1,6 +1,6 @@
 import React from "react";
 import PickerButtons from "./PickerButtons";
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import Textimg from "../Assets/Text.png";
 import Buttonimg from "../Assets/Button.png";
 import Dropdownimg from "../Assets/Dropdown.png";
@@ -10,31 +10,50 @@ import PickerSearch from "./PickerSearch";
 const EditorPicker = (props) => {
   const { onComponentCreation, onClearCanvas } = props;
 
-  const handelCreateButton = () => {
-    // const newButton = <button key={Date.now()}>New Button</button>;
-    const newButton = (
+  const createComponent = (type, content) => {
+    const newComponent = {
+      type: type,
+      id: Date.now(),
+      content: content,
+    };
+    onComponentCreation(newComponent);
+  };
+
+  const handleCreateButton = () => {
+    createComponent(
+      "Button",
       <Button key={Date.now()} variant="contained">
         New Button
       </Button>
     );
-    onComponentCreation(newButton);
   };
-  const handelCreateText = () => {
-    const newText = <input key={Date.now()} type="text" />;
-    onComponentCreation(newText);
+
+  const handleCreateText = () => {
+    createComponent(
+      "Text",
+      <TextField
+        variant="outlined"
+        key={Date.now()}
+        placeholder="New Input Field"
+        sx={{ backgroundColor: "white" }}
+      />
+    );
   };
+
   const handleCreateDropdown = () => {
-    const newDropdown = (
+    createComponent(
+      "Dropdown",
       <select key={Date.now()}>
         <option value="option1">Option 1</option>
         <option value="option2">Option 2</option>
         <option value="option3">Option 3</option>
       </select>
     );
-    onComponentCreation(newDropdown);
   };
+
   const handleCreateTable = () => {
-    const newTable = (
+    createComponent(
+      "Table",
       <table key={Date.now()}>
         <tbody>
           <tr>
@@ -58,20 +77,19 @@ const EditorPicker = (props) => {
         </tbody>
       </table>
     );
-    onComponentCreation(newTable);
   };
 
   return (
     <div className="editor-picker">
       <PickerSearch />
       <PickerButtons
-        onClick={handelCreateButton}
+        onClick={handleCreateButton}
         Heading={"Button"}
         subHeading={"Trigger actions like run queries.."}
         imgURL={Buttonimg}
       />
       <PickerButtons
-        onClick={handelCreateText}
+        onClick={handleCreateText}
         Heading={"Text Input"}
         subHeading={"Supports Markdown or HTML"}
         imgURL={Textimg}

@@ -11,6 +11,7 @@ const PickerButtons = ({ imgURL, Heading, subHeading, onClick }) => {
           marginBottom: "25px",
           paddingBottom: "25px",
           borderBottom: "1px solid #E9EFF2",
+          cursor: "pointer",
         }}
         onClick={onClick}
       >
