@@ -1,5 +1,5 @@
 import React from "react";
-import AppHeader from "./components/AppHeader";
+import AppHeader from "./components/Header/AppHeader";
 import "./App.css";
 
 // You can split your components

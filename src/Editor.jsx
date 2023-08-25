@@ -27,8 +27,8 @@
 // export default Editor;
 
 import React, { useState } from "react";
-import EditorCanvas from "./components/EditorCanvas";
-import EditorPicker from "./components/EditorPicker";
+import EditorCanvas from "./components/Canvas/EditorCanvas";
+import EditorPicker from "./components/Picker/EditorPicker";
 import { DragDropContext } from "react-beautiful-dnd"; // Import DragDropContext
 import "./Editor.css";
 
