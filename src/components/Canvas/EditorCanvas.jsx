@@ -3,7 +3,7 @@ import { Responsive, WidthProvider } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import { useDrop } from "react-dnd";
-import ItemTypes from "./ItemType"; // Import the ItemTypes object
+import ItemTypes from "./ItemType";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -13,7 +13,7 @@ const EditorCanvas = ({ components, setComponents }) => {
       i: index.toString(),
       x: 0,
       y: index,
-      w: 1,
+      w: 2,
       h: 1,
     }))
   );
@@ -35,7 +35,7 @@ const EditorCanvas = ({ components, setComponents }) => {
   });
   const handleLayoutChange = (layout) => {
     setLayouts(layout);
-    // localStorage.setItem("layouts", JSON.stringify(layout));
+    localStorage.setItem("layouts", JSON.stringify(layout));
   };
 
   return (
@@ -45,6 +45,7 @@ const EditorCanvas = ({ components, setComponents }) => {
         layouts={{ lg: layouts }}
         breakpoints={{ lg: 1200 }}
         cols={{ lg: 8 }}
+        rowHeight={60}
         onLayoutChange={handleLayoutChange}
       >
         {components.map((component, index) => (

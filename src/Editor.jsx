@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EditorCanvas from "./components/Canvas/EditorCanvas";
 import EditorPicker from "./components/Picker/EditorPicker";
-import { DragDropContext } from "react-beautiful-dnd"; // Import DragDropContext
+import { DragDropContext } from "react-beautiful-dnd";
 import "./Editor.css";
 
 const Editor = (props) => {
@@ -19,17 +19,17 @@ const Editor = (props) => {
     if (!result.destination) {
       return;
     }
-
     const reorderedComponents = Array.from(components);
     const [movedComponent] = reorderedComponents.splice(result.source.index, 1);
     reorderedComponents.splice(result.destination.index, 0, movedComponent);
-
     setComponents(reorderedComponents);
   };
 
   useEffect(() => {
+    console.log(components);
     localStorage.setItem("components", JSON.stringify(components));
   }, [components]);
+
   return (
     <div className="editor">
       <DragDropContext onDragEnd={handleDragEnd}>
