@@ -3,7 +3,7 @@ import PickerButtons from "./PickerButtons";
 import { Button, TextField } from "@mui/material";
 import Textimg from "../../Assets/Text.png";
 import Buttonimg from "../../Assets/Button.png";
-import Dropdownimg from "../../Assets/Dropdown.png";
+import Dropdownimg from "../../Assets/DropDown.png";
 import Tableimg from "../../Assets/Table.png";
 import PickerSearch from "./PickerSearch";
 
